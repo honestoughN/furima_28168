@@ -1,4 +1,23 @@
-function calculate() {
-  const calculateDisplay = document.getElementsByClassName("hidden")
-  console.log(calculateDisplay)
+window.addEventListener('load', price);
+
+function price(){
+  const priceInput = document.getElementById("item-price");
+  const add_tax = document.getElementById("add-tax-price");
+  const profit = document.getElementById("profit");
+
+  priceInput.addEventListener('keyup', () => {
+    const value = priceInput.value;
+
+    if (value >= 300 && value <= 9999999){
+      let fee = value * 0.1
+      let gains = value - fee
+      add_tax.textContent = fee;
+      profit.textContent = gains;
+    } else {
+      let fee = 'NaN';
+      let gains = 'NaN';
+      add_tax.textContent = fee;
+      profit.textContent = gains;
+    }
+  });
 }
