@@ -19,6 +19,11 @@ class Item < ApplicationRecord
       validates :shipping_area_id
       validates :shipping_day_id
     end
-    validates :selling_price, numericality: { only_integer: true }
+    validates :selling_price,
+              numericality: {
+                only_integer: true,
+                greater_than_or_equal_to: 300,
+                less_than_or_equal_to: 9999999,
+              }
   end
 end
