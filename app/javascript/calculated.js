@@ -12,8 +12,7 @@ function price(){
       add_tax.textContent = value * 0.1;
       profit.textContent = value * 0.9;
     } else {
-      add_tax.textContent = 'NaN';
-      profit.textContent = 'NaN';
+      (add_tax, profit).textContent = 'NaN';
     }
   });
 }
