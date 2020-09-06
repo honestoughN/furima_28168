@@ -9,15 +9,11 @@ function price(){
     const value = priceInput.value;
 
     if (value >= 300 && value <= 9999999){
-      let fee = value * 0.1
-      let gains = value - fee
-      add_tax.textContent = fee;
-      profit.textContent = gains;
+      add_tax.textContent = value * 0.1;
+      profit.textContent = value * 0.9;
     } else {
-      let fee = 'NaN';
-      let gains = 'NaN';
-      add_tax.textContent = fee;
-      profit.textContent = gains;
+      add_tax.textContent = 'NaN';
+      profit.textContent = 'NaN';
     }
   });
 }
