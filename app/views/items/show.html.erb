@@ -23,7 +23,6 @@
       </span>
     </div>
 
-    <%# ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう%>
     <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
         <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %>
@@ -35,7 +34,6 @@
     <% end %>
     <%# //商品が売れていない場合はこちらを表示しましょう %>
 
-    <%# // ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう %>
 
     <div class="item-explain-box">
       <span><%= @item.detail %></span>
@@ -103,7 +101,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>
