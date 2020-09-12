@@ -69,7 +69,7 @@
 
 - belongs_to :item_purchase
 
-## item_purchases テーブル
+## orders テーブル
 
 | Column  | Type    | Options                       |
 | ------- | ------- | ----------------------------- |
