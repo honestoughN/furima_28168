@@ -3,15 +3,14 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:new, :create]
  
   def new
-    @order = Order.new
+    @order = ItemOrder.new
   end
   
   def create
-    @order = Order.new(order_params)
+    @order = ItemOrder.new(order_params)
     if @order.valid?
       # pay_item
       @order.save
-      # binding.pry
       return redirect_to root_path
     else
       render 'new'
@@ -26,7 +25,8 @@ class OrdersController < ApplicationController
   end
   
   def order_params
-    params.require(:order).permit(:token).merge(item_id: params[:id], user_id: current_user.id)
+    # params.require(:item_order).permit(:token).merge(item_id: params[:id], user_id: current_user.id)
+    params.require(:item_order).permit(:postal_code, :prefecture_id, :city, :block_number, :building_name, :phone_number).merge(item_id: params[:id], user_id: current_user.id)
   end
 
   def set_item

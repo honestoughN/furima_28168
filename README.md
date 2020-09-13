@@ -17,7 +17,7 @@
 
 - has_many :items
 - has_many :comments
-- has_many :item_purchases
+- has_many :order
 
 ## items テーブル
 
@@ -38,7 +38,7 @@
 
 - belongs_to :user
 - has_many :comments
-- has_one :item_purchase
+- has_one :order
 
 ## comments テーブル
 
@@ -55,19 +55,19 @@
 
 ## shipping_addresses テーブル
 
-| Column           | Type    | Options                       |
-| ---------------- | ------- | ----------------------------- |
-| item_purchase_id | integer | null:false, foreign_key: true |
-| postal_code      | string  | null:false                    |
-| prefecture_id    | integer | null:false                    |
-| city             | string  | null:false                    |
-| block_number     | string  | null:false                    |
-| building_name    | string  |                               |
-| phone_number     | string  | null:false                    |
+| Column        | Type    | Options                       |
+| ------------- | ------- | ----------------------------- |
+| order_id      | integer | null:false, foreign_key: true |
+| postal_code   | string  | null:false                    |
+| prefecture_id | integer | null:false                    |
+| city          | string  | null:false                    |
+| block_number  | string  | null:false                    |
+| building_name | string  |                               |
+| phone_number  | string  | null:false                    |
 
 ### Association
 
-- belongs_to :item_purchase
+- belongs_to :order
 
 ## orders テーブル
 
