@@ -1,19 +1,23 @@
 class OrdersController < ApplicationController
   before_action :move_to_sign_in
 
-  def show
+  def new
     @item = Item.find(params[:id])
+    @order = Order.new
   end
+  
   def create
+    @item = Item.find(params[:id])
     @order = Order.new(order_params)
     if @order.valid?
       pay_item
       @order.save
       return redirect_to root_path
     else
-      render 'show'
+      render 'new'
     end
   end
+
   private
   def move_to_sign_in
     unless user_signed_in?
