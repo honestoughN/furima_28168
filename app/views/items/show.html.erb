@@ -29,7 +29,7 @@
         <p class='or-text'>or</p>
         <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
       <% end %>
-      <% if @item.order.blank? %>
+      <% if @item.order.blank? && current_user.id != @item.user_id %>
         <%= link_to '購入画面に進む', orders_new_item_path(@item.id), method: :get, class:"item-red-btn"%>
       <% end %>
     <% end %>
