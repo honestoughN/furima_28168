@@ -1,9 +1,6 @@
 FactoryBot.define do
   factory :item_order do
-    number          {"4242424242424242"}
-    cvc             {"123"}
-    exp_month       {"12"}
-    exp_year        {"99"}
+    token           {"token"}
     postal_code     {"333-0000"}
     prefecture_id   {"3"}
     city            {"横浜"}
