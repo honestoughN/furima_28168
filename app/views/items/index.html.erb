@@ -134,7 +134,7 @@
             <%= image_tag item.image, class: "item-img" if item.image.attached? %>
 
             <%# 商品が売れていればsold outの表示 %>
-            <% unless item[:order_id].blank? %>
+            <% unless item.order.blank? %>
             <div class='sold-out'>
               <span>Sold Out!!</span>
             </div>

@@ -36,6 +36,11 @@ RSpec.describe ItemOrder, type: :model do
         @item_order.valid?
         expect(@item_order.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
       end
+      it '郵便番号が7桁を超えると購入できない' do
+        @item_order.postal_code = "1234-5678"
+        @item_order.valid?
+        expect(@item_order.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+      end
       it '都道府県の選択をしないままだと購入できない' do
         @item_order.prefecture_id = "1"
         @item_order.valid?
