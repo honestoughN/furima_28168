@@ -33,6 +33,7 @@
 | shipping_area_id    | integer | null:false                    |
 | shipping_day_id     | integer | null:false                    |
 | selling_price       | integer | null:false                    |
+| favorite_mark       | integer |                               |
 
 ### Association
 
