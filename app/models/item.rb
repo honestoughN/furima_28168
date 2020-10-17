@@ -11,7 +11,7 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :image
+    validates :image, presence: { message: "をアップロードしてください" }
     validates :detail
     with_options numericality: { other_than: 1, message: "を選択してください" } do
       validates :category_id
