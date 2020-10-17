@@ -54,7 +54,25 @@ ja:
             selling_price:
               blank: を入力してください
               not_a_number: は半角数字で入力してください
-
+        user:
+          attributes:
+            email:
+              blank: を入力してください
+            password:
+              blank: を入力してください
+            nickname:
+              blank: を入力してください
+            first_name:
+              blank: を入力してください
+            last_name:
+              blank: を入力してください
+            first_name_kana:
+              blank: を入力してください
+            last_name_kana:
+              blank: を入力してください
+            date_of_birth:
+              blank: を入力してください
+              
   activemodel:
     attributes:
       item_order:
