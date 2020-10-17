@@ -5,11 +5,11 @@ class ItemOrder
 
   with_options presence: true do
     validates :token
-    validates :prefecture_id, numericality: { other_than: 1 }
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message:  "is invalid. Include hyphen(-)" }
+    validates :prefecture_id, numericality: { other_than: 1, message: "を選択してください" }
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message:  "はハイフンを入れた半角数字7桁で入力してください" }
     validates :city
     validates :block_number
-    validates :phone_number, format: { with: /\A[0-9]{11}\z/, message: "ハイフンを除いた11桁で入力してください" }
+    validates :phone_number, format: { with: /\A[0-9]{11}\z/, message: "はハイフンを除いた半角数字11桁で入力してください" }
   end
 
   def save
