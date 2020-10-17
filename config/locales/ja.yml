@@ -72,6 +72,17 @@ ja:
               blank: を入力してください
             date_of_birth:
               blank: を入力してください
+  activemodel:
+    attributes:
+      item_order:
+        token: カード情報
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        block_number: 番地
+        phone_number: 電話番号
+    errors:
+      models:
         item_order:
           attributes:
             token:
@@ -84,12 +95,3 @@ ja:
               blank: を入力してください
             phone_number:
               blank: を入力してください
-  activemodel:
-    attributes:
-      item_order:
-        token: カード情報
-        postal_code: 郵便番号
-        prefecture_id: 都道府県
-        city: 市区町村
-        block_number: 番地
-        phone_number: 電話番号
