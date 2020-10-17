@@ -72,7 +72,18 @@ ja:
               blank: を入力してください
             date_of_birth:
               blank: を入力してください
-              
+        item_order:
+          attributes:
+            token:
+              blank: を入力してください
+            postal_code:
+              blank: を入力してください
+            city:
+              blank: を入力してください
+            block_number:
+              blank: を入力してください
+            phone_number:
+              blank: を入力してください
   activemodel:
     attributes:
       item_order:
