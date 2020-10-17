@@ -43,6 +43,18 @@ ja:
         shipping_area_id: 発送元の地域
         shipping_day_id: 発送までの日数
         selling_price: 販売価格
+    errors:
+      models:
+        item:
+          attributes:
+            name:
+              blank: を入力してください
+            detail:
+              blank: を入力してください
+            selling_price:
+              blank: を入力してください
+              not_a_number: は半角数字で入力してください
+
   activemodel:
     attributes:
       item_order:
