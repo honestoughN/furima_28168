@@ -6,18 +6,21 @@ crumb :item_new do
   link "商品出品ページ"
 end
 
-crumb :item_show do
-  link "商品詳細ページ", item_path
+crumb :item_show do |item|
+  item = Item.find(params[:id])
+  link "詳細ページ【#{item.name}】", item_path
   parent :root
 end
 
-crumb :item_edit do
-  link "商品編集ページ"
+crumb :item_edit do |item|
+  item = Item.find(params[:id])
+  link "編集ページ【#{item.name}】"
   parent :item_show
 end
 
-crumb :order do
-  link "商品購入ページ"
+crumb :order do |item|
+  item = Item.find(params[:id])
+  link "購入ページ【#{item.name}】"
   parent :item_show
 end
 
