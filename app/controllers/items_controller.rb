@@ -17,9 +17,12 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+
   end
 
   def show
+    @comment = Comment.new
+    @comments = @item.comments.includes(:item)
   end
 
   def edit
