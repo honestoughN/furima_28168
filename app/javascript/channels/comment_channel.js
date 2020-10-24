@@ -10,10 +10,19 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    const html = `<p>${data.content.text}</p>`;
-    const messages = document.getElementById('comments');
-    const newMessage = document.getElementById('comment_text');
-    messages.insertAdjacentHTML('afterbegin', html);
-    newMessage.value='';
+    console.log(data)
+    if ( current_user.id == data.content.user_id ) {
+      const html = `<div class="comment-output seller"><p>☆&lt;${data.content.user_id.nickname}&gt;</p><p>${data.content.text}</p></div>`;
+      const messages = document.getElementById('comments');
+      const newMessage = document.getElementById('comment_text');
+      messages.insertAdjacentHTML('afterbegin', html);
+      newMessage.value='';
+    } else {
+      const html = `<div class="comment-output viewer"><p>&lt;${data.content.user_id.nickname}&gt;</p><p>${data.content.text}</p></div>`;
+      const messages = document.getElementById('comments');
+      const newMessage = document.getElementById('comment_text');
+      messages.insertAdjacentHTML('afterbegin', html);
+      newMessage.value='';
+    }
   }
 });
