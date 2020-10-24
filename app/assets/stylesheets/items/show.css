@@ -204,3 +204,21 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comment-output {
+  background-color: white;
+  height: auto;
+  width: 20rem;
+  margin: 5px;
+  padding: 0.6rem;
+  border: 1px solid #3ccacc;
+  border-radius: 8px;
+}
+
+.seller {
+  margin-right: 15rem;
+}
+
+.viewer {
+  margin-left: 15rem;
+}
