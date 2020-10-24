@@ -78,11 +78,12 @@
     </div>
   </div>
   <%# /商品の概要 %>
-  <div id='comments'>
-    <% @comments.reverse_each do |comment| %>
+  
+  <% @comments.reverse_each do |comment| %>
+    <div id='comments'>
       <p><%= comment.text %></p>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
   <div class="comment-box">
     <%= form_with(model: [@item, @comment]) do |f| %>
       <%= f.text_area :text, placeholder: "コメントする", class:"comment-text"%>
@@ -91,13 +92,13 @@
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <%# <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <%# <span>コメントする<span> %>
-      <%# </button> %> %>
-        <%= f.submit 'コメントする' %>
+      <%= button_tag type: :submit, class:"comment-btn" do %>
+        <p>
+          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          コメントする
+        </p>
       <% end %>
-    </form>
+    <% end %>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
