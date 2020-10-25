@@ -11,14 +11,14 @@ consumer.subscriptions.create("CommentChannel", {
 
   received(data) {
     console.log(data)
-    if ( current_user.id == data.content.user_id ) {
-      const html = `<div class="comment-output seller"><p>☆&lt;${data.content.user_id.nickname}&gt;</p><p>${data.content.text}</p></div>`;
+    if ( data.item.user_id == data.content.user_id ) {
+      const html = `<div class="comment-output seller"><p>☆&lt;${data.user_name}&gt;</p><p>${data.content.text}</p></div>`;
       const messages = document.getElementById('comments');
       const newMessage = document.getElementById('comment_text');
       messages.insertAdjacentHTML('afterbegin', html);
       newMessage.value='';
     } else {
-      const html = `<div class="comment-output viewer"><p>&lt;${data.content.user_id.nickname}&gt;</p><p>${data.content.text}</p></div>`;
+      const html = `<div class="comment-output viewer"><p>&lt;${data.user_name}&gt;</p><p>${data.content.text}</p></div>`;
       const messages = document.getElementById('comments');
       const newMessage = document.getElementById('comment_text');
       messages.insertAdjacentHTML('afterbegin', html);

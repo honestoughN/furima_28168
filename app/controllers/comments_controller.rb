@@ -6,9 +6,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    item = Item.find(params[:item_id])
+    user_name = current_user.nickname
     unless @comment.text.blank?
       if @comment.save
-        ActionCable.server.broadcast 'comment_channel', content: @comment
+        ActionCable.server.broadcast 'comment_channel', content: @comment, item: item, user_name: user_name
       end
     end
   end
