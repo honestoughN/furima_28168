@@ -6,5 +6,6 @@ Rails.application.routes.draw do
       resources :orders, only: [:new, :create]
       post 'orders/new' => 'orders#new'
     end
+    resources :comments, only: [:new, :create]
   end
 end
