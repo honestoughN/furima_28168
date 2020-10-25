@@ -78,21 +78,19 @@
     </div>
   </div>
   <%# /商品の概要 %>
-  <div class="comments-space">
+  <div class="comments-space" id="comments">
     <% @comments.reverse_each do |comment| %>
-      <div id='comments'>
-        <% if @item.user_id == comment.user_id %>
-          <div class="comment-output seller">
-            <p>☆&lt;<%= comment.user.nickname %>&gt;</p>
-            <p><%= comment.text %></p>
-          </div>
-          <% else %>
-          <div class="comment-output viewer">
-            <p>&lt;<%= comment.user.nickname %>&gt;</p>
-            <p><%= comment.text %></p>
-          </div>
-        <% end %>
-      </div>
+      <% if @item.user_id == comment.user_id %>
+        <div class="comment-output seller">
+          <p>☆&lt;<%= comment.user.nickname %>&gt;</p>
+          <p><%= comment.text %></p>
+        </div>
+        <% else %>
+        <div class="comment-output viewer">
+          <p>&lt;<%= comment.user.nickname %>&gt;</p>
+          <p><%= comment.text %></p>
+        </div>
+      <% end %>
     <% end %>
   </div>
   <div class="comment-box">

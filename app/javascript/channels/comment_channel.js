@@ -10,7 +10,6 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    console.log(data)
     if ( data.item.user_id == data.content.user_id ) {
       const html = `<div class="comment-output seller"><p>☆&lt;${data.user_name}&gt;</p><p>${data.content.text}</p></div>`;
       const messages = document.getElementById('comments');
